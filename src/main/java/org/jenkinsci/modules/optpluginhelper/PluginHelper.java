@@ -300,7 +300,7 @@ public class PluginHelper extends Descriptor<PluginHelper> implements Describabl
                 LOGGER.log(Level.INFO, "Cannot dynamically load optional plugins because {0} is already installed",
                         existing.getShortName());
                 cannotDynamicLoad = true;
-            } else if (YesNoMaybe.NO == wrapper.supportsDynamicLoad()) {
+            } else if (existing == null && YesNoMaybe.NO == wrapper.supportsDynamicLoad()) {
                 LOGGER.log(Level.INFO,
                         "Cannot dynamically load optional plugins because {0} does not support dynamic load",
                         wrapper.getShortName());
